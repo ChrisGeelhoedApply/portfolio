@@ -1,0 +1,72 @@
+console.log('this is a')
+
+
+var circle_od = window.innerWidth > 500 ? 70 : 45;
+//circle_od = 45;
+var stroke_length = Math.ceil(2 * 3.14159 * 0.8 * circle_od);
+var ratings = [0.9, 0.6, 0.2, 1, 0.6];
+var ratings = [["Javascript", 0.90], ["JQuery", 0.85], ["CSS", 0.8], ["ReactJS", 0.8]];
+for (var i = 0; i < ratings.length; i++) {
+    document.getElementById("circles").innerHTML += '<div class="circle-stats"><svg class="circle"><circle cx="50px" cy="50px" r="40" class="inner1" /><circle cx="50px" cy="50px" r="40" class="inner2" /></svg>' + ratings[i][0] + '</div>';
+}
+
+
+var circles = document.getElementsByClassName("circle-stats");
+
+for (i = 0; i < circles.length; i++) {
+    var circle = circles[i].childNodes[0];
+    var inner1 = circle.childNodes[0];
+    var inner2 = circle.childNodes[1];
+
+    inner1.setAttribute("cx", circle_od);
+    inner1.setAttribute("cy", circle_od);
+    inner1.setAttribute("r", 0.8 * circle_od);
+    inner1.setAttribute("stroke-dasharray", stroke_length + " " + stroke_length);
+
+    inner2.setAttribute("cx", circle_od);
+    inner2.setAttribute("cy", circle_od);
+    inner2.setAttribute("r", 0.8 * circle_od);
+
+    circle.setAttribute("height", 2 * circle_od);
+    circle.setAttribute("width", 2 * circle_od);
+}
+
+var arcs = [];
+arcs[0] = 1;
+function getCircles() {
+    function getCircle(i) {
+        function circle_loop() {
+            circles[i].childNodes[0].childNodes[1].setAttribute("stroke-dasharray", arcs[i] * stroke_length + " " + stroke_length);
+            setTimeout(function () {
+                arcs[i] += 0.020;
+                if (arcs[i] < ratings[i][1]) {
+                    circle_loop();
+                }
+            }, 30);
+        };
+        circle_loop();
+    }
+    for (var i = 0; i < circles.length; i++) {
+        arcs[i] = 0;
+        getCircle(i);
+    }
+    return arcs[0] > ratings[0][1];
+}
+
+var links = ["hello", "resume", "portfolio"];
+var id = "";
+
+for (var i = 0; i < links.length; i++) {
+    document.getElementById(links[i]).onclick = function (e) {
+        for (var j = 0; j < links.length; j++) {
+            id = links[j] + "Div";
+            document.getElementById(id).style.display = "none"
+        }
+        id = e.target.id + "Div";
+        document.getElementById(id).style.display = "flex";
+
+        if(e.target.id === "resume" && arcs[0] >= ratings[0][1]) {
+            getCircles();
+        }
+    }
+}

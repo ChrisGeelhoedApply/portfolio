@@ -1,0 +1,225 @@
+.circles {
+  display: flex;
+  justify-content: space-around; }
+  .circles .circle-stats {
+    display: block;
+    text-align: center; }
+    .circles .circle-stats .circle {
+      transform: rotate(-90deg); }
+      .circles .circle-stats .circle .inner1 {
+        stroke: lightgray;
+        stroke-width: 20px;
+        fill: white; }
+      .circles .circle-stats .circle .inner2 {
+        stroke: #0AA6E1;
+        stroke-width: 20px;
+        fill: none; }
+
+body {
+  font-family: "Open Sans";
+  font-weight: 200;
+  margin: 0; }
+
+.title {
+  font-size: 1.5em;
+  color: #0885b4; }
+
+.nav {
+  height: 60px;
+  background-color: #066EB3;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-bottom: 3px solid #066EB3;
+  display: flex;
+  align-items: center; }
+  .nav ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    list-style-type: none; }
+    .nav ul li {
+      color: lightgray;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      padding: 0 8px;
+      height: 60px;
+      border-bottom: 5px solid #066EB3; }
+    .nav ul li:hover {
+      transition: color 0.5s ease;
+      color: white;
+      transition: background-color 0.5s ease;
+      cursor: pointer;
+      border-bottom-color: lightgray;
+      background-color: #0784d7; }
+
+.header {
+  height: 240px;
+  background-color: #0AA6E1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex; }
+  .header .left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50%; }
+    .header .left .name {
+      color: white;
+      font-size: 3.0em;
+      margin-left: 22%; }
+      .header .left .name .job {
+        font-size: 0.60em; }
+  .header .right {
+    height: 100%;
+    width: 50%; }
+    .header .right img {
+      height: 100%; }
+
+#timeline {
+  margin: 10px 0 10px 0; }
+
+.page {
+  display: flex;
+  justify-content: center; }
+  .page .projects {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; }
+    .page .projects .description {
+      width: 60%;
+      padding: 40px; }
+      .page .projects .description p {
+        font-size: 1.0em; }
+    .page .projects .iphoneContainer {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      padding: 50px 0 50px 0; }
+      .page .projects .iphoneContainer .iphone {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border: 3px solid black;
+        border-radius: 20px;
+        padding: 20px 4px 4px 4px;
+        height: 684px;
+        width: 324.17062px;
+        background-color: #191919; }
+        .page .projects .iphoneContainer .iphone img {
+          margin-top: 56.772px;
+          height: 533.52px;
+          border: 1px solid black;
+          border-radius: 3px; }
+        .page .projects .iphoneContainer .iphone .button {
+          height: 60.192px;
+          width: 60.192px;
+          border: 1px solid lightgray;
+          border-radius: 50%;
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .page .projects .iphoneContainer .iphone .button div {
+            height: 18.0576px;
+            width: 18.0576px;
+            border: 1px solid lightgray;
+            border-radius: 2px; }
+  .page .left {
+    width: 35%;
+    height: 100%;
+    padding: 40px 0 40px 40px;
+    z-index: -1; }
+    .page .left .left-side {
+      border-bottom: 2px solid gray;
+      padding: 8% 0 8% 0;
+      margin: 0 10% 0 20%;
+      display: block; }
+      .page .left .left-side .personal td, .page .left .left-side .personal th {
+        text-align: left;
+        padding: 0 25px 12px 0; }
+      .page .left .left-side .stats td, .page .left .left-side .stats th {
+        text-align: left;
+        padding: 0 25px 12px 0; }
+      .page .left .left-side .stats td {
+        height: 50%;
+        padding: 0;
+        margin: 0;
+        width: 100%; }
+        .page .left .left-side .stats td .statsbar {
+          width: 100%;
+          height: 10px;
+          background-color: lightgray; }
+          .page .left .left-side .stats td .statsbar .statsbar {
+            background-color: #0AA6E1; }
+    .page .left .left-side:nth-child(1) {
+      padding: 0 0 8% 0; }
+  .page .right {
+    width: 65%;
+    height: 100%;
+    padding: 40px;
+    border-left: 4px solid gray; }
+    .page .right .timeline {
+      padding: 0px 0px 20px 0px; }
+      .page .right .timeline .border {
+        border-bottom: 2px solid gray;
+        padding: 30px 0 30px 0;
+        font-size: 1.5em;
+        color: #0885b4; }
+      .page .right .timeline table {
+        width: 100%; }
+        .page .right .timeline table tr td {
+          padding: 5px 0 0 15px; }
+        .page .right .timeline table tr th {
+          padding: 12px 0 5px 0;
+          float: left; }
+        .page .right .timeline table tr th:nth-last-child(1) {
+          float: right; }
+        .page .right .timeline table tr:nth-last-child(1) td {
+          border-bottom: 2px solid gray;
+          padding: 5px 0 18px 15px; }
+
+#resumeDiv {
+  display: none; }
+
+#portfolioDiv {
+  display: none; }
+
+.footer1 {
+  height: 168px;
+  background-color: #0AA6E1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: 0 20% 0 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .footer1 .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .footer1 .link .circle {
+      background-color: #0779c5;
+      height: 80px;
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%; }
+      .footer1 .link .circle img {
+        width: 88px; }
+  .footer1 .circle:hover {
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    background-color: lightgray; }
+
+.footer2 {
+  color: black;
+  height: 60px;
+  background-color: #066EB3;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+/*# sourceMappingURL=styles.css.map */
